@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Denise ❤️</title>
+  <!-- CUSTOMIZE: Add your fonts here -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* CUSTOMIZE: Change these colors to match your preference */
+      --primary-color: #e75480;
+      --secondary-color: #f5d5e0;
+      --background-color: #fff5f6;
+      --text-color: #5a3a5a;
+      --accent-color: #ff9a9e;
+    }
+        /* Proposal Section Styles */
+        .proposal-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .proposal-card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .proposal-card h2 {
+      font-family: 'Pacifico', cursive;
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .proposal-card p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: var(--text-color);
+    }
+
+    .proposal-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .yes-btn {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .yes-btn:hover {
+      transform: scale(1.1);
+      background: #ff4081;
+    }
+
+    .no-btn {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      background: #f5f5f5;
+      color: var(--text-color);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .hearts-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: float-heart 3s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes float-heart {
+      0% { transform: translateY(0) translateX(0); opacity: 1; }
+      100% { transform: translateY(-100px) translateX(var(--x)); opacity: 0; }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Enhanced envelope styling */
+    .envelope-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background-color);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: transform 1s ease-in-out;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    .envelope {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary-color), #ff8da1);
+      clip-path: polygon(0 0, 50% 50%, 100% 0);
+      transform-origin: top;
+      transition: transform 0.5s;
+      z-index: 2;
+    }
+
+    .envelope-content {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: white;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Pacifico', cursive;
+      color: var(--primary-color);
+      padding: 20px;
+      text-align: center;
+      transform: translateY(0);
+      transition: transform 0.5s;
+    }
+
+    .envelope-wrapper:hover .envelope-flap {
+      transform: rotateX(180deg);
+    }
+
+    .envelope-wrapper:hover .envelope-content {
+      transform: translateY(-10px);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Enhanced envelope styling */
+    .envelope-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: transform 1s ease-in-out;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    .envelope {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary-color), #ff8da1);
+      clip-path: polygon(0 0, 50% 50%, 100% 0);
+      transform-origin: top;
+      transition: transform 0.5s;
+      z-index: 2;
+    }
+
+    .envelope-content {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: white;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Pacifico', cursive;
+      color: var(--primary-color);
+      padding: 20px;
+      text-align: center;
+      transform: translateY(0);
+      transition: transform 0.5s;
+    }
+
+    .envelope-wrapper:hover .envelope-flap {
+      transform: rotateX(180deg);
+    }
+
+    .envelope-wrapper:hover .envelope-content {
+      transform: translateY(-10px);
+    }
+
+    .main-content {
+      display: none;
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .countdown-section {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .countdown-title {
+      font-family: 'Pacifico', cursive;
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .days-number {
+      font-size: 4rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+    }
+
+    .scrapbook {
+      background: white;
+      border: 10px solid var(--secondary-color);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      background: white;
+      padding: 15px;
+      border-radius: 15px;
+      height: fit-content;
+    }
+
+    /* CUSTOMIZE: Add your images in the content below */
+    .photo-grid img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      background: var(--secondary-color);
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .letter-container {
+      margin: 20px 0;
+      padding: 20px;
+      background: #f9f9f9;
+      border: 2px dashed var(--primary-color);
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--primary-color);
+      padding: 5px;
+    }
+
+    .close-button:hover {
+      transform: scale(1.1);
+    }
+
+    .movie-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .movie-tickets {
+      display: none;
+      padding: 20px;
+      background: #f9f9f9;
+      border: 2px dashed var(--primary-color);
+      border-radius: 10px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .movie-trailer {
+      margin-top: 20px;
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .movie-trailer iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .spotify-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #1DB954;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: transform 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .spotify-button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .buttons {
+        grid-template-columns: repeat(2, 1fr); 
+      }
+    }
+    .volume-control {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .volume-control input[type="range"] {
+      width: 100px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Volume Control -->
+  <div class="volume-control">
+    <span>🔊</span>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+  </div>
+    <!-- Proposal Section -->
+    <div class="proposal-container" id="proposal-container">
+      <div class="hearts-container" id="hearts-container"></div>
+      <div class="proposal-card">
+        <h2>Hey Denise! 💝</h2>
+        <p>Will you be my Valentine?</p>
+        <div class="proposal-buttons">
+          <button class="yes-btn" onclick="acceptProposal()">Yes, of course!</button>
+          <button class="no-btn" onmouseover="moveButton(this)" onclick="tryNo()">No</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Envelope Section -->
+    <div class="envelope-container" id="envelope-container">
+      <div class="envelope-wrapper">
+        <div class="envelope-flap"></div>
+        <div class="envelope"></div>
+        <div class="envelope-content">
+          ❤️ Click to Open<br>Your Valentine's Gift ❤️
+        </div>
+      </div>
+    </div>
+
+  <!-- Main content -->
+  <div class="main-content" id="main-content">
+    <!-- Countdown Section -->
+    <div class="countdown-section">
+      <h2 class="countdown-title">Days Together</h2>
+      <div class="days-number" id="days-together">0</div>
+    </div>
+
+    <div class="content-grid">
+      <div class="scrapbook">
+        <h1>For My Denise ❤️</h1>
+        <div class="buttons">
+          <button onclick="openLetter('mad')">Open when you're mad at me</button>
+          <button onclick="openLetter('happy')">Open when you're happy</button>
+          <button onclick="openLetter('sad')">Open when you're sad</button>
+          <button onclick="openLetter('miss')">Open when you miss me</button>
+          <button onclick="openLetter('love')">Open when you love me</button>
+          <button onclick="openLetter('bored')">Open when you're bored</button>
+          <button onclick="openLetter('annoyed')">Open when you're annoyed</button>
+          <button onclick="openLetter('grateful')">Open when you're horny</button>
+        </div>
+
+        <div class="letter-container">
+          <button class="close-button" onclick="closeLetter()">×</button>
+          <div id="letter-content"></div>
+        </div>
+
+        <div class="movie-container">
+          <button onclick="revealMovieDetails()">🎬 Click here to buy tickets 🎬</button>
+          <div class="movie-tickets">
+            <h2>🎟️ Movie Date 🎟️</h2>
+            <!-- CUSTOMIZE: Update movie details below -->
+            <p><strong>Movie Title:</strong> Isa Pa with Feelings (feel free to suggest kung hindi bet hehe, sabi daw nila kase maganda to.) </p>
+            <p><strong>Schedule:</strong> February 14, 2024, 10:00PM</p>
+            <p><strong>Attire:</strong> Any na comfy ang baby loves ko! </p>
+            <p><strong>Food:</strong> Me, jk, yung oorderin! </p>
+            
+            <!-- CUSTOMIZE: Add your YouTube trailer embed link below -->
+            <div class="movie-trailer">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/66fBNmD0t00?si=8Kt5wYrn1ZTMz11A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- CUSTOMIZE: Add your Spotify link below -->
+        <a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F1TOnMhC2SGgSxig7WVjFEj%3Fsi%3DIOKlwhr4RyuGj7nMytbRzQ%26pi%3Da-mbhbVFkeRkeR&h=AT0K_ii2VtMyv5AZWjTusR4J1GjWEe0kLHBdtHJfMpH2RgeyoZHJTlxrPfnfaRpeiRVTAO0RYuvqRoW_2TH0dOzeO1l3Gh7aO5mGbH6Rnm_QQoQUNdAoDQym0QfQD1MGHQSVlarGZCq9j2c2IyUg" target="_blank" class="spotify-button">
+          🎵 Special Playlist for my Baby Only! 🎵
+        </a>
+
+        <div class="valentine-letter">
+          <h2>💌 My Valentine's Letter 💌</h2>
+          <!-- CUSTOMIZE: Update the letter content below -->
+          <p>
+            Dear baby, love, honey, wifey, babe, denden, Denise,<br><br>
+            Happy Valentine's Day! You mean the world to me, and I'm so grateful to have you in my life. I think this is our third Valentines together, time flies so fast talaga! Kaso lang, we could not meet ule, since inadvance kona ahahghahga, pero di ko naman hahayaan na dumaan ang valentines na wala man lang something for you, kahit small gesture lang. Alam kong medyo nagkakatampuhan tayo ngayon, pero pinahaba ko talaga para pag dating ng Valentines kala mo wala akong gagawin, pero meron pala hehe, pero wag ka nag tampo kase ako sayo nung tinulugan moko habang tinatanong kita bat ka nagtatampo! tsk! hmp. Pero okay na yun, fake na lang yung tuesday-thursday hehe. I made a website ule kase syempre, IT hahahah, pero parang this is my way of showing appreciation over these past few months na magkasama tayo, nagaaway, nagbabangayan, pero hindi pa natin iniwan ang isat't isa. And I thank you for it kase natitiis moko hehe. I love you baby, sa taas neto merong movie thingy, lets watch a movie tomorrow ha? Tapos yung food, may naisip ako, orderan natin yung isat isa, surprise lang, hindi natin papalaam kung ano ioorder mo hehe. I love you baby, I hope you like my gift, alam kong hindi sya mamahalin or what, pero nag effort talaga ako dito promise! This is even better kesa dun sa website nung last anniversary natin, I'm sorry if di tayo naka meet, babawi ako, promise! I love you so much baby! You are my everything, and I hope I can reach my dreams with you, and also reach your dreams with me.  ❤️<br><br>
+            Forever yours,<br>
+            Austin, Francis, Reyes, Baby, Love, Hubby, Babe.
+          </p>
+        </div>
+      </div>
+
+      <div class="photo-grid">
+        <!-- CUSTOMIZE: Add your image sources below -->
+        <img src="imaged/IMG_0058.JPG" alt="Our Memory 1">
+        <img src="imaged/C8F84497-78F6-4233-AAEF-934A618061A4.jpeg" alt="Our Memory 2">
+        <img src="imaged/IMG_0646.PNG" alt="Our Memory 3">
+        <img src="imaged/IMG_0769.JPG" alt="Our Memory 4">
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOMIZE: Add your audio file below -->
+  <audio id="background-music" loop>
+    <source src="imaged/One Direction - 18 (Audio).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+        // New Proposal Functions
+        function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.setProperty('--x', (Math.random() * 100 - 50) + 'px');
+      document.getElementById('hearts-container').appendChild(heart);
+      setTimeout(() => heart.remove(), 3000);
+    }
+
+    let heartInterval;
+    function startHearts() {
+      heartInterval = setInterval(createHeart, 300);
+    }
+
+    function stopHearts() {
+      clearInterval(heartInterval);
+    }
+
+    function acceptProposal() {
+      startHearts();
+      setTimeout(() => {
+        stopHearts();
+        document.getElementById('proposal-container').style.display = 'none';
+        document.getElementById('envelope-container').style.display = 'flex';
+      }, 2000);
+    }
+
+    function moveButton(btn) {
+      const rect = btn.getBoundingClientRect();
+      const parentRect = btn.parentElement.getBoundingClientRect();
+      
+      let newX = Math.random() * (window.innerWidth - rect.width);
+      let newY = Math.random() * (window.innerHeight - rect.height);
+      
+      newX = Math.max(0, Math.min(newX, window.innerWidth - rect.width));
+      newY = Math.max(0, Math.min(newY, window.innerHeight - rect.height));
+      
+      btn.style.position = 'fixed';
+      btn.style.left = newX + 'px';
+      btn.style.top = newY + 'px';
+    }
+
+    const noResponses = [
+      "Are you sure? 🥺",
+      "Pretty please? 💝",
+      "Think again! 😊",
+      "But we're perfect together! 💕",
+      "Don't make me sad! 😢",
+      "Give love a chance! ❤️",
+      "You know you want to say yes! 😘",
+      "I won't take no for an answer! 🌹"
+    ];
+
+    let noCount = 0;
+    function tryNo() {
+      const noBtn = document.querySelector('.no-btn');
+      noBtn.textContent = noResponses[noCount % noResponses.length];
+      noCount++;
+      
+      const yesBtn = document.querySelector('.yes-btn');
+      const currentPadding = parseInt(window.getComputedStyle(yesBtn).padding) || 15;
+      const currentFont = parseInt(window.getComputedStyle(yesBtn).fontSize) || 20;
+      yesBtn.style.padding = (currentPadding + 2) + 'px';
+      yesBtn.style.fontSize = (currentFont + 1) + 'px';
+    }
+
+    // CUSTOMIZE: Update the start date below
+    const startDate = new Date("October 30, 2022").getTime();
+    const daysTogetherElement = document.getElementById("days-together");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeDifference = now - startDate;
+      const daysTogether = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      daysTogetherElement.textContent = daysTogether;
+    }
+
+    // CUSTOMIZE: Update the letters content below
+    const letters = {
+      mad: "Hi baby, alam kong magkagalit tayo ngayon, pero alam mo kahit di tayo nag papansinan rn, just know that I love you always, kahit nga di tayo mag kausap, kala mo di kita iniisip, pero minsan ikaw pa bukambibig ko kay mama saka kay Boo. Yes, kinakausap ko si Boo bakit eh anak natin yon? Anyways, hindi ko alam kung sino naman may kasalanan satin ngayon, pero kung sino man yun, love parin natin isa’t isa diba? Even when magkagalit, I always love you. Mwua!❤️",
+      happy: "Wow good mood baby ko, yehey! Feeling ko nagkita tayo after neto, or napopogian ka nananaman saken kaya ka happy, OR nakakain to ng masarap na pagkain , hays ako lang to. Ganyan dapat lagi, happy ka and naka smile, mas maganda ka kaya pag naka ngiti na kita teeth kesa sinusungitan ako! I love you baby, you deserve all the love from the world, and I’m lucky to be part of your happiness.😊",
+      sad: "Oh bat sad baby ko, nag away ba tayo, or bad mood lang dahil nag away kayo ni tita? Cheer up na, mahuhulas makeup mo pag iyak ka ng iyak sige sayang pa naman yung issy mo saka grwm. Call nalang tayo pag wala ako pasok para di na sad baby ko, or kaya patatawanin nalang kita ng jokes ko na hindi corny hehehe. Pero alam ko kung ano makakapag pasaya sayo kahit sad na sad ka, fries ng BonChon!! Hehehehe di pa natin natitikman ule yun kase wala sa SMP. I love you baby, cheer up na! Mwua!!!💕",
+      miss: "Namiss ako oh, hays ako lang to, jk. I miss you more baby! Feeling ko ilang months na tayo hindi nagkikita kahit one month palang!! Miss kona smell mo, miss kona hair mo saka face, miss kona lips mo, miss kona boobs mo (hehe). Kahit wala ka dito, minsan nararamdaman k presensya mo, like out of nowhere maamoy kita or what HAHAHA or pag may nakita ako it reminds it of you ganern. I miss you so much!! I cant wait to kiss you and hug you babyyy, next month g? I love you baby.🌹",
+      love: "Alam ko naman yun, jk. I love you more baby! Di mo alam gano mo ako pinasaya etong 2 years na girlfriend kita, feeling ko pag wala ka, parang di siguro ako naggym, o kaya parang pinapabayaan kona rin sarili ko hehe. I love you more baby, hindi lumilipas ang isang minuto na hindi kita naiisip, kahit nag aaway tayo! Ganon kita kamahal, dumadayo pa ng Pampanga para makita kalang, and nag lakas loob pumunta kina tita hehehe. I love you so so so much baby, you mean the world to me, pag wala ka, para wala na rin akong mundo. HEHEAHHA ang corny pero true yan. Mwua!!❤️",
+      bored: "Bored ka? Sus nonood kalang nan ng teledrama mo e yung kay lee min ki or what, che, jk. Pero if wala ako pasok, call tayo mamaya, nood tayo movie ganon or kwentuhan lang! I love you baby.",
+      annoyed: "Oh sorry na baby kung naiirita ka saken, alam kong mahal mo parin ako kahit ganon hehe. Minsan makulit, pero love mo paren ako diba? Syempre! Ako lang to. Hehe alam mo naman minsan trip kita na ininiis diba heheh ang cute cute mo kasi pag nag tampo tampuhan, para kong naiimagine na naka pout ka tas sabay eye roll AHAHHA, I love you na baby, masusuyo kana mamaya hehe. Mwua!💬",
+      grateful: "AYANN pinindot!! Tsk, tsk, bad yan. Kimmy. WALA WALA WALANG LAMAN TO HAHAA KALA MO AH. Pero kung totoo to, suotin mo lang yung blue na sando tas movie. HEHEHEHHE",
+    };
+
+    // Initial envelope click handler
+    document.querySelector('.envelope-wrapper').addEventListener('click', function() {
+      document.getElementById('envelope-container').style.transform = 'translateY(-100%)';
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('background-music').play();
+    });
+
+    const letterContent = document.getElementById("letter-content");
+    const letterContainer = document.querySelector(".letter-container");
+
+    function openLetter(feeling) {
+      letterContent.textContent = letters[feeling];
+      letterContainer.style.display = "block";
+    }
+
+    function closeLetter() {
+      letterContainer.style.display = "none";
+    }
+
+    function revealMovieDetails() {
+      const movieTickets = document.querySelector('.movie-tickets');
+      movieTickets.style.display = movieTickets.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Initialize countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000 * 60 * 60 * 24); // Update daily
+
+    // Prevent spacebar from triggering buttons when closing letters
+    document.addEventListener('keydown', function(e) {
+      if (e.code === 'Space' && e.target === document.body) {
+        e.preventDefault();
+      }
+    });
+
+    // Optional: Add smooth scrolling for mobile
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        setTimeout(() => {
+          const element = document.querySelector('.letter-container');
+          if (element.style.display === 'block') {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      });
+    });
+    const volumeSlider = document.getElementById("volume-slider");
+    const backgroundMusic = document.getElementById("background-music");
+
+    volumeSlider.addEventListener("input", () => {
+      backgroundMusic.volume = volumeSlider.value;
+    });
+  </script>
+</body>
+</html>
